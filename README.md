@@ -7,7 +7,7 @@ The api only needs PHP 5.3+ and MySQL. Compatible with SolusVM Client ID.
 Upload the files to "/var/www/html/api/" and edit the "config.php" with your PowerDNS MySQL Details.
 If you are using SolusVM, you can find your PowerDNS Details in Configuration > PowerDNS.
 
-[logo]: http://fotos.subefotos.com/b498c8af356976988ebe6c35f2559546o.jpg "SolusVM"
+![SolusVM](http://fotos.subefotos.com/b498c8af356976988ebe6c35f2559546o.jpg)
 
 This work is under WTFPL License.
 
