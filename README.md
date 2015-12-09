@@ -36,3 +36,12 @@ All the parameter are sent using GET to the API.
 <pre>http://ns1.yourserver.com/api/?key=Your-API-Key&action=add_record&domain_id=12&name=demo.com&type=NS&content=google.com</pre>
 <i>Response:</i>
 <pre>{"status":"success","msg":"New record created successfully!"}</pre>
+
+#Installing API
+For install the API, only run this command over SSH.
+<pre>
+    cd /var/www/html/api/
+    wget https://github.com/CyanDarkInc/PowerDNS-API/archive/master.zip
+    unzip master.zip
+    rm -f master.zip
+</pre>
