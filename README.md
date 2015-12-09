@@ -20,6 +20,7 @@ get_domain_id               | Get the ID of a Domain      | <b>domain</b> <i>str
 add_record                  | Add a Record to PowerDNS    | <b>domain_id</b> <i>integer</i> Domain ID.<br> <b>name</b> <i>string</i> Record Name.<br> <b>type</b> <i>string</i> Record Type.<br> <b>content</b> <i>string</i> Record Content.<br>
 get_domains_by_solusvmid    | Get domains by SolusVM ID   | <b>solusvm_cid</b> <i>integer</i> SolusVM Client ID.<br>
 get_records_by_domain_id    | Get the records of a domain | <b>domain_id</b> <i>integer</i> Domain ID.<br>
+delete_domain               | Delete a domain             | <b>domain_id</b> <i>integer</i> Domain ID.<br>
 
 # Using API 
 

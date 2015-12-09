@@ -43,6 +43,16 @@ if($_GET['key'] == $api['key']){
 		}
 	}
 	
+	// Delete Domain
+	if($_GET['action'] == 'delete_domain'){
+		if(!empty($_GET['domain_id'])){
+			$response = $PowerDNS->deleteDomain($_GET['domain_id']);
+			$output = json_encode($response);
+		} else {
+			$output = json_encode(array("status" => "error", "msg" => "Missing data for delete_domain."));
+		}
+	}
+	
 	// Get Domain ID
 	if($_GET['action'] == 'get_domain_id'){
 		if(!empty($_GET['domain'])){

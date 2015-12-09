@@ -74,6 +74,26 @@ class PowerDNS{
 	}
 
 	/**
+	 * Delete Domain
+	 *
+	 * @param string $domain_id The domain ID to delete
+	 * @return array Result of the operation
+	 */	
+	function deleteDomain($domain_id){
+		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		if ($conn->connect_error) {
+    		die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "DELETE FROM domains WHERE id = ".intval($domain_id);
+		if ($conn->query($sql) === TRUE) {
+			return array("status" => "success", "msg" => "Domain deleted successfully!");
+		} else {
+			return array("status" => "error", "msg" => "Error: ".$sql." - ".$conn->error);
+		}
+		$conn->close();
+	}
+
+	/**
 	 * Get Domain ID
 	 *
 	 * @param string $domain The domain for add
