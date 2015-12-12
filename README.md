@@ -17,7 +17,7 @@ Function                    | Description                 | Parameters
 --------------------------- | --------------------------- | ---------------------------
 add_domain                  | Add a domain to PowerDNS    | <b>domain</b> <i>string</i> A valid domain.<br> <b>solusvm_cid</b> <i>integer</i> (Optional) SolusVM Client ID.<br>
 get_domain_id               | Get the ID of a Domain      | <b>domain</b> <i>string</i> A valid domain.<br> 
-add_record                  | Add a Record to PowerDNS    | <b>domain_id</b> <i>integer</i> Domain ID.<br> <b>name</b> <i>string</i> Record Name.<br> <b>type</b> <i>string</i> Record Type.<br> <b>content</b> <i>string</i> Record Content.<br>
+add_record                  | Add a Record to PowerDNS    | <b>domain_id</b> <i>integer</i> Domain ID.<br> <b>name</b> <i>string</i> Record Name.<br> <b>type</b> <i>string</i> Record Type.<br> <b>content</b> <i>string</i> Record Content.<br> <b>ttl</b> <i>integer</i> Record TTL.<br> <b>prio</b> <i>integer</i> Record Priority (Only for MX and SRV).<br>
 get_domains_by_solusvmid    | Get domains by SolusVM ID   | <b>solusvm_cid</b> <i>integer</i> SolusVM Client ID.<br>
 get_records_by_domain_id    | Get the records of a domain | <b>domain_id</b> <i>integer</i> Domain ID.<br>
 delete_domain               | Delete a domain             | <b>domain_id</b> <i>integer</i> Domain ID.<br>
