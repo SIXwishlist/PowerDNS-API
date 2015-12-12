@@ -126,13 +126,13 @@ class PowerDNS{
 	 * @param string $content The Record Content
 	 * @return array Result of the operation
 	 */	
-	function addRecord($domain_id, $name, $type, $content){
+	function addRecord($domain_id, $name, $type, $content, $ttl=1440, $prio=0){
 		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
-		$sql = "INSERT INTO records (domain_id, name, type, content)
-				VALUES (".intval($domain_id).", '".htmlspecialchars($name)."', '".htmlspecialchars($type)."', '".htmlspecialchars($content)."')";
+		$sql = "INSERT INTO records (domain_id, name, type, content, ttl, prio, change_date)
+				VALUES (".intval($domain_id).", '".htmlspecialchars($name)."', '".htmlspecialchars($type)."', '".htmlspecialchars($content)."', ".intval($ttl).", ".intval($prio).", ".time().")";
 		if ($conn->query($sql) === TRUE) {
 			return array("status" => "success", "msg" => "New record created successfully!");
 		} else {

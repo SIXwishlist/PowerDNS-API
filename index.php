@@ -69,8 +69,8 @@ if($_GET['key'] == $api['key']){
 	
 	// Add Record
 	if($_GET['action'] == 'add_record'){
-		if(!empty($_GET['domain_id']) && !empty($_GET['name']) && !empty($_GET['type']) && !empty($_GET['content'])){
-			$response = $PowerDNS->addRecord($_GET['domain_id'], $_GET['name'], $_GET['type'], $_GET['content']);
+		if(!empty($_GET['domain_id']) && !empty($_GET['name']) && !empty($_GET['type']) && !empty($_GET['content']) && !empty($_GET['ttl'])){
+			$response = $PowerDNS->addRecord($_GET['domain_id'], $_GET['name'], $_GET['type'], $_GET['content'], $_GET['ttl'], $_GET['prio ']);
 			$output = json_encode($response);
 		} else {
 			$output = json_encode(array("status" => "error", "msg" => "Missing data for add_record."));
