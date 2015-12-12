@@ -182,7 +182,7 @@ class PowerDNS{
 		$response = $conn->query($sql);
 		if ($response->num_rows > 0) {
 			while($row = $response->fetch_assoc()) {
-				$records[] = array("id" => $row["id"], "name" => $row["name"], "type" => $row["type"], "content" => $row["content"]);
+				$records[] = array("id" => $row["id"], "name" => $row["name"], "type" => $row["type"], "content" => $row["content"], "ttl" => $row["ttl"], "prio" => $row["prio"]);
 			}
 			return array("status" => "success", "msg" => "The rercord has been listed successfully", "zones" => $records);
 		} else {
