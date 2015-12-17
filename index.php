@@ -32,7 +32,7 @@ if($_GET['key'] == $api['key']){
 	// Add Domain
 	if($_GET['action'] == 'add_domain'){
 		if(!empty($_GET['domain'])){
-			if($PowerDNS->isValidDomain($_GET['domain'])){
+			if($PowerDNS->isValidDomain($_GET['domain']) && count(explode(".", $_GET['domain'])) > 1){
 				$response = $PowerDNS->addDomain($_GET['domain'], $_GET['solusvm_cid']);
 				$output = json_encode($response);
 			} else {
