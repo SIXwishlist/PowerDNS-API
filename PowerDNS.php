@@ -85,7 +85,8 @@ class PowerDNS{
     		die("Connection failed: " . $conn->connect_error);
 		}
 		$sql = "DELETE FROM domains WHERE id = ".intval($domain_id);
-		if ($conn->query($sql) === TRUE) {
+		$sql2 = "DELETE FROM records WHERE domain_id = ".intval($domain_id);
+		if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
 			return array("status" => "success", "msg" => "Domain deleted successfully!");
 		} else {
 			return array("status" => "error", "msg" => "Error: ".$sql." - ".$conn->error);
