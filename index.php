@@ -80,7 +80,7 @@ if($_GET['key'] == $api['key']){
 	// Delete Record
 	if($_GET['action'] == 'delete_record'){
 		if(!empty($_GET['record_id'])){
-			$response = $PowerDNS->addRecord($_GET['record_id']);
+			$response = $PowerDNS->deleteRecord($_GET['record_id']);
 			$output = json_encode($response);
 		} else {
 			$output = json_encode(array("status" => "error", "msg" => "Missing data for delete_record."));
