@@ -143,6 +143,26 @@ class PowerDNS{
 	}
 
 	/**
+	 * Delete Record
+	 *
+	 * @param string $record_id The record ID to delete
+	 * @return array Result of the operation
+	 */	
+	function deleteRecord($record_id){
+		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		if ($conn->connect_error) {
+    		die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "DELETE FROM records WHERE id = ".intval($record_id);
+		if ($conn->query($sql) === TRUE) {
+			return array("status" => "success", "msg" => "Record deleted successfully!");
+		} else {
+			return array("status" => "error", "msg" => "Error: ".$sql." - ".$conn->error);
+		}
+		$conn->close();
+	}
+
+	/**
 	 * Get Domains by SolusVM Container ID
 	 *
 	 * @param string $solusvm_cid The SolusVM Container ID
