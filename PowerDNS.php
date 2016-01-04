@@ -211,5 +211,24 @@ class PowerDNS{
 		}
 		$conn->close();
 	}
+    
+	/**
+	 * Create solusvm_cid Row
+	 *
+	 * @return array Result of the operation
+	 */	
+	function createSolusVMID(){
+		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		if ($conn->connect_error) {
+    		die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "ALTER TABLE domains ADD solusvm_cid VARCHAR(60)";
+		if ($conn->query($sql) === TRUE) {
+			return array("status" => "success", "msg" => "Column created successfully!");
+		} else {
+			return array("status" => "error", "msg" => "Error: ".$sql." - ".$conn->error);
+		}
+		$conn->close();
+	}
 }
 ?>

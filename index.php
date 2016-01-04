@@ -106,6 +106,12 @@ if($_GET['key'] == $api['key']){
 			$output = json_encode(array("status" => "error", "msg" => "Missing data for get_records_by_domain_id."));
 		}
 	}
+    
+	// Create solusvm_cid Row
+	if($_GET['action'] == 'create_solus_vmid'){
+	    $response = $PowerDNS->createSolusVMID();
+	    $output = json_encode($response);
+	}
 }
 
 // Print Output
