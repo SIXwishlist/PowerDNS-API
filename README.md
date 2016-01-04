@@ -41,7 +41,9 @@ All the parameter are sent using GET to the API.
 #Installing API
 For install the API, only run this command over SSH.
 <pre>
-$ cd /var/www/html/api/
+$ cd /var/www/html
+$ mkdir api
+$ cd api
 $ wget https://github.com/CyanDarkInc/PowerDNS-API/archive/master.zip
 $ unzip master.zip
 $ rm -f master.zip
