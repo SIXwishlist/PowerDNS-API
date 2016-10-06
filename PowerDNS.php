@@ -18,10 +18,10 @@
 
 class PowerDNS{
 	protected $server;
-	protected $userName;
+	protected $username;
 	protected $password;
-	protected $dbName;
-	protected $dbPort;
+	protected $dbname;
+	protected $dbport;
 	
 	/**
 	 * Constructor
@@ -32,11 +32,12 @@ class PowerDNS{
 	 * @param string $DbPort The port used for MySQL
 	 * @return stdClass The PowerDNS class to connect to DB
 	 */	
-	function __construct($Server, $UserName, $Password, $DbName='powerdns', $DbPort=3306){
-		$this->userName = $UserName;
+	function __construct($Server, $Usermame, $Password, $Dbname='powerdns', $Dbport=3306){
+		$this->server = $Server;
+		$this->username = $Username;
 		$this->password = $Password;
-		$this->dbName = $DbName;
-		$this->dbPort = $DbPort;
+		$this->dbname = $Dbname;
+		$this->dbport = $Dbport;
 	}
 	
 	/**
@@ -59,7 +60,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function addDomain($domain, $solusvm_cid=null){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -80,7 +81,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function deleteDomain($domain_id){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -102,7 +103,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function getDomainID($domain){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -128,7 +129,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function addRecord($domain_id, $name, $type, $content, $ttl=1440, $prio=0){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -149,7 +150,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function deleteRecord($record_id){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -169,7 +170,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function getDomainsBySolusVMID($solusvm_cid){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
@@ -194,12 +195,12 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function getRecordsByDomainID($domain_id){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
 		$sql = "SELECT * FROM records WHERE domain_id = ".intval($domain_id);
-		$domains = array();
+		$records = array();
 		$response = $conn->query($sql);
 		if ($response->num_rows > 0) {
 			while($row = $response->fetch_assoc()) {
@@ -218,7 +219,7 @@ class PowerDNS{
 	 * @return array Result of the operation
 	 */	
 	function createSolusVMID(){
-		$conn = new mysqli($this->server, $this->userName, $this->password, $this->dbName, $this->dbPort);
+		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		die("Connection failed: " . $conn->connect_error);
 		}
