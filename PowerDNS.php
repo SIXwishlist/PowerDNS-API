@@ -54,13 +54,17 @@ class PowerDNS{
 	 * @param string $solusvm_cid The SolusVM Container ID
 	 * @return array Result of the operation
 	 */	
-	function addDomain($domain, $solusvm_cid=null){
+	function addDomain($domain, $solusvm_cid = null){
 		$conn = new mysqli($this->server, $this->username, $this->password, $this->dbname, $this->dbport);
 		if ($conn->connect_error) {
     		throw new Exception("Connection failed: " . $conn->connect_error);
 		}
-		$sql = "INSERT INTO domains (name, type, solusvm_cid)
-				VALUES ('".htmlspecialchars($domain)."', 'NATIVE', '".intval($solusvm_cid)."')";
+		if(!empty($solusvm_cid)){
+			$sql = "INSERT INTO domains (name, type, solusvm_cid)
+					VALUES ('".htmlspecialchars($domain)."', 'NATIVE', '".intval($solusvm_cid)."')";
+		}
+		$sql = "INSERT INTO domains (name, type)
+				VALUES ('".htmlspecialchars($domain)."', 'NATIVE')";
 		if ($conn->query($sql) === TRUE) {
 			return array("status" => "success", "msg" => "New record created successfully!");
 		}
@@ -92,7 +96,6 @@ class PowerDNS{
 	 * Get Domain ID
 	 *
 	 * @param string $domain The domain for add
-	 * @param string $solusvm_cid The SolusVM Container ID
 	 * @return array Result of the operation
 	 */	
 	function getDomainID($domain){

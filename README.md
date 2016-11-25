@@ -4,7 +4,7 @@
 
 PowerDNS HTTP API is a HTTP API for PowerDNS, Simple and Lightweight. 
 
-The api only needs PHP 5.3+ and MySQL. Compatible with SolusVM Client ID.
+The API only needs PHP 5.3+ and MySQL. Compatible with SolusVM Client ID.
 
 Upload the files to "/var/www/html/api/" and edit the "config.php" with your PowerDNS MySQL Details.
 If you are using SolusVM, you can find your PowerDNS Details in Configuration > PowerDNS.
