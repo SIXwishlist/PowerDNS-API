@@ -1,5 +1,7 @@
 # PowerDNS HTTP API 
 
+[![Code Climate](https://codeclimate.com/github/CyanDarkInc/PowerDNS-API/badges/gpa.svg)](https://codeclimate.com/github/CyanDarkInc/PowerDNS-API)
+
 PowerDNS HTTP API is a HTTP API for PowerDNS, Simple and Lightweight. 
 
 The api only needs PHP 5.3+ and MySQL. Compatible with SolusVM Client ID.
@@ -50,5 +52,3 @@ $ rm -f master.zip
 </pre>
 
 Now you can access to the API from http://Your-PowerDNS-Server-IP/api/
-
-<b>Security Audition:</b> https://codeclimate.com/github/CyanDarkInc/PowerDNS-API/issues
