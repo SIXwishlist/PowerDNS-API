@@ -1,0 +1,25 @@
+{
+    "name": "cyandark/powerdns-api",
+    "type": "library",
+    "description": "An easy to implement PowerDNS API class, Simple and Lightweight.",
+    "keywords": [],
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "CyanDark, Inc.",
+            "email": "support@cyandark.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "CyanDark\\Api\\": "" }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        }
+    }
+}

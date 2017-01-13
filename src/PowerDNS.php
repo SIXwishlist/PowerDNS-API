@@ -9,6 +9,7 @@
  * @license http://www.wtfpl.net/about/ The Do What The Fuck You Want To Public License (WTFPL)
  * @author CyanDark, Inc <support@cyandark.com>
  */
+namespace CyanDark\Api;
 
 class PowerDNS{
 	protected $server;

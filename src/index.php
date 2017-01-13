@@ -12,7 +12,7 @@ include('PowerDNS.php');
 
 header('Content-Type: text/plain');
 
-$PowerDNS = new PowerDNS($db['host'], $db['user'], $db['pass'], $db['name'], $db['port']);
+$PowerDNS = new CyanDark\Api\PowerDNS($db['host'], $db['user'], $db['pass'], $db['name'], $db['port']);
 $output = json_encode(array("status" => "error", "msg" => "Unauthorized"));
 
 // Verifiy API Key
