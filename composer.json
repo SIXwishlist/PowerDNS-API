@@ -2,7 +2,7 @@
     "name": "cyandark/powerdns-api",
     "type": "library",
     "description": "An easy to implement PowerDNS API class, Simple and Lightweight.",
-    "version": "v1.1",
+    "version": "v1.0.0",
     "keywords": ["powerdns", "api"],
     "license": "WTFPL",
     "authors": [
@@ -15,6 +15,6 @@
         "php": ">=5.4"
     },
     "autoload": {
-        "psr-4": { "CyanDark\\Api\\": "src" }
+        "psr-4": { "CyanDark\\Api\\": "src/" }
     }
 }
