@@ -1,7 +1,7 @@
 # PowerDNS API 
 
 [![StyleCI](https://styleci.io/repos/47706537/shield?branch=master)](https://styleci.io/repos/47706537)
-[![Codacy](https://img.shields.io/codacy/grade/32143961293d4ae3b25dd9e702f69c65/master.svg?style=flat-square)](https://www.codacy.com/app/yosoy/Advandz-Framework?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Advandz/Advandz-Framework&amp;utm_campaign=Badge_Grade)
+[![Codacy](https://img.shields.io/codacy/grade/32143961293d4ae3b25dd9e702f69c65/master.svg?style=flat-square)](https://www.codacy.com/app/CyanDarkInc/PowerDNS-API?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CyanDarkInc/PowerDNS-API&amp;utm_campaign=Badge_Grade)
 
 An easy to implement HTTP API for PowerDNS, Simple and Lightweight.
 
