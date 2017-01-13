@@ -1,5 +1,7 @@
 # PowerDNS API 
 
+[![StyleCI](https://styleci.io/repos/47706537/shield?branch=master)](https://styleci.io/repos/47706537)
+
 An easy to implement HTTP API for PowerDNS, Simple and Lightweight.
 
 The API only needs PHP 5.4+ and MySQL.
