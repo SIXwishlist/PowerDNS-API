@@ -20,10 +20,11 @@ disabled:
  - print_to_echo
  - psr4
  - simplified_null_return
- - phpdoc_no_package
  - unalign_equals
  - trailing_comma_in_multiline_array
  
 finder:
  exclude:
   - "language"
+  - "vendors"
+  - "vendor"
