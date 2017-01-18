@@ -10,9 +10,8 @@ enabled:
  - align_equals
  - align_double_arrow
  - no_short_echo_tag
- - single_blank_line_at_eof
- 
-disabled: 
+
+disabled:
  - whitespace_after_comma_in_array
  - space_after_semicolon
  - not_operator_with_successor_space
@@ -21,7 +20,7 @@ disabled:
  - simplified_null_return
  - unalign_equals
  - trailing_comma_in_multiline_array
- 
+
 finder:
  exclude:
   - "language"
