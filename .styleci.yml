@@ -15,7 +15,6 @@ enabled:
 disabled: 
  - whitespace_after_comma_in_array
  - space_after_semicolon
- - single_blank_line_at_eof
  - not_operator_with_successor_space
  - print_to_echo
  - psr4
