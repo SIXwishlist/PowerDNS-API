@@ -20,9 +20,3 @@ disabled:
  - simplified_null_return
  - unalign_equals
  - trailing_comma_in_multiline_array
-
-finder:
- exclude:
-  - "language"
-  - "vendors"
-  - "vendor"
