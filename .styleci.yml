@@ -20,3 +20,4 @@ disabled:
  - simplified_null_return
  - unalign_equals
  - trailing_comma_in_multiline_array
+ - phpdoc_no_package
