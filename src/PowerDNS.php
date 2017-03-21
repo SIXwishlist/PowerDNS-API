@@ -9,6 +9,8 @@
 
 namespace CyanDark\Api;
 
+use Exception;
+
 class PowerDNS
 {
     protected $server;
