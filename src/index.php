@@ -105,4 +105,4 @@ if ($_GET['key'] == $api['key']) {
 }
 
 // Print Output
-print $output;
+echo $output;
